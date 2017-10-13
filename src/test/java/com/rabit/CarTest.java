@@ -69,10 +69,10 @@ public class CarTest {
 	 */
 	@Test
 	public void manufacturerIsNull() {
-		Car car = new Car( null, "DD-AB-123", 4 );
+		Car car = new Car( null, "DD-AB-123", 3 );
 
 		Set<ConstraintViolation<Car>> constraintViolations = validator.validate( car );
-
+		System.out.println("--------"+constraintViolations.size());
 		assertEquals( 1, constraintViolations.size() );
 		assertEquals( "may not be null", constraintViolations.iterator().next().getMessage() );
 	}
